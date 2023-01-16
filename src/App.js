@@ -35,15 +35,19 @@ function App() {
   );
 }
 
-function List(props) {
-  const list = props.list;
-  console.log(list);
+function List(props) {  
+  const [ item, setItem ] = useState(props.list);
+  function valueChange(e) {
+    const temp = {...item};
+    temp.text = e.target.value;
+    setItem(temp);
+  }
   return(
     <div className='list'>
       <div className='left'><p className='chk-box'>&nbsp;</p></div>
-      <div className='middle'><input className='insert'/></div>
+      <div className='middle'><input className='insert' value={item.text} onChange={valueChange}/></div>
       <div className='right'>
-        <p>수정</p>
+        <p onClick={function(){console.log(item)}}>수정</p>
         <p>삭제</p>
       </div>
     </div>
