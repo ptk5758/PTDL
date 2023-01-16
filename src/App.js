@@ -14,23 +14,38 @@ function App() {
         </div>
         <div className='list'>
           <div className='left'><p className='chk-box'>&nbsp;</p></div>
-          <div className='middle'><p>내용이다</p></div>
-          <div className='right'><p>수정</p><p>삭제</p></div>
+          <div className='middle'><input className='insert'/></div>
+          <div className='right'>
+            <p>수정</p>
+            <p>삭제</p>
+          </div>
         </div>
         <div className='list'>
           <div className='left'><p className='chk-box'>&nbsp;</p></div>
-          <div className='middle'><p>내용이다</p></div>
-          <div className='right'><p>수정</p><p>삭제</p></div>
+          <div className='middle'><input className='insert'/></div>
+          <div className='right'>
+            <p>수정</p>
+            <p>삭제</p>
+          </div>
         </div>
         <div className='list'>
           <div className='left'><p className='chk-box'>&nbsp;</p></div>
-          <div className='middle'><p>내용이다</p></div>
-          <div className='right'><p>수정</p><p>삭제</p></div>
+          <div className='middle'><input className='insert'/></div>
+          <div className='right'>
+            <p>수정</p>
+            <p>삭제</p>
+          </div>
         </div>
         <div className='list'>
           <div className='left'><p className='chk-box'>&nbsp;</p></div>
-          <div className='middle'><p>내용이다</p></div>
-          <div className='right'><p>수정</p><p>삭제</p></div>
+          <div className='middle'><input className='insert'/></div>
+          <div className='right'>
+            <p>수정</p>
+            <p>삭제</p>
+          </div>
+        </div>
+        <div className='list'>
+          <p> 항목 추가하기 </p>
         </div>
       </div>
     </div>
