@@ -12,10 +12,13 @@ body { background-color: #eeeeee; font-family: 'ROKAF-M';}
 .content { width: 100%; display: flex; flex-direction: column; align-items: center;}
 .title { margin-top: 2.7rem; }
 .title > p { font-size: 2rem; font-family: 'ROKAF-B';}
-
 .board { border : 3px solid #000000; width: 83%; border-radius: 2px; }
-.head { border-bottom: 2px solid #000000; background-color: rgb(193, 207, 219); display: flex; justify-content: center; align-items: center;}
-.list { display: flex; align-items: center; justify-content: center; }
-.board .left { width: 15%; }
-.board .right { width: 75%; display: flex; justify-content: space-between; border-bottom: 1px solid #000000;}
-.board .right .opt { display: flex; justify-content: center; }
+.board p { text-align: center; }
+.board .head { border-bottom: 2px solid #000000; background-color: rgb(193, 207, 219); display: flex; justify-content: center; align-items: center; padding: 0.4rem 0.5rem;}
+.board .list { display: flex; align-items: stretch; justify-content: center;  padding: 1.3rem 0.5rem;}
+.board .left { width: 12%; display: flex; justify-content: center;}
+/* 체크박스 */
+.board .chk-box { border: 1px solid #000000; background-color: rgb(255, 255, 255); width: 30px; height: 30px;}
+.board .middle { width: 68%; display: flex; justify-content: space-between; border-bottom: 2px solid #000000; }
+.board .head .middle { border-bottom: none; }
+.board .right { width: 18%; display: flex; justify-content: center; }

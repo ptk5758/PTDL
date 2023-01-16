@@ -8,25 +8,29 @@ function App() {
       </div>
       <div className='board'>
         <div className='head'>
-          <div className='left'>
-            <p>Checked</p>
-          </div>
-          <div className='right'>
-            <p>Content</p>
-            <p>Option</p>
-          </div>
+          <div className='left'><p>Checked</p></div>
+          <div className='middle'><p>Content</p></div>
+          <div className='right'><p>option</p></div>
         </div>
         <div className='list'>
-          <div className='left'>
-            <p>ㅁ</p>
-          </div>
-          <div className='right'>
-            <p>ㅡㅡ</p>
-            <div className='opt'>
-              <p>수정</p>
-              <p>삭제</p>
-            </div>
-          </div>
+          <div className='left'><p className='chk-box'>&nbsp;</p></div>
+          <div className='middle'><p>내용이다</p></div>
+          <div className='right'><p>수정</p><p>삭제</p></div>
+        </div>
+        <div className='list'>
+          <div className='left'><p className='chk-box'>&nbsp;</p></div>
+          <div className='middle'><p>내용이다</p></div>
+          <div className='right'><p>수정</p><p>삭제</p></div>
+        </div>
+        <div className='list'>
+          <div className='left'><p className='chk-box'>&nbsp;</p></div>
+          <div className='middle'><p>내용이다</p></div>
+          <div className='right'><p>수정</p><p>삭제</p></div>
+        </div>
+        <div className='list'>
+          <div className='left'><p className='chk-box'>&nbsp;</p></div>
+          <div className='middle'><p>내용이다</p></div>
+          <div className='right'><p>수정</p><p>삭제</p></div>
         </div>
       </div>
     </div>
