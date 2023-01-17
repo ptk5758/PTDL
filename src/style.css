@@ -19,6 +19,8 @@ body { background-color: #eeeeee; font-family: 'ROKAF-M';}
 .board .left { width: 12%; display: flex; justify-content: center;}
 /* 체크박스 */
 .board .chk-box { border: 1px solid #000000; background-color: rgb(255, 255, 255); width: 30px; height: 30px;}
+.board .chk-box > img { width: 100%; display: none;}
+.board .chk-box.on > img { display: block;}
 .board .middle { width: 68%; display: flex; justify-content: space-between; border-bottom: 2px solid #000000; }
 .board .head .middle { border-bottom: none; }
 .board .right { width: 15%; display: flex; justify-content: space-around; }

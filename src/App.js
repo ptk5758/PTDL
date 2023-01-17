@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import checkIcon from './source/img/check-icon.png';
 
 function App() {
   const tempData = [
@@ -41,10 +42,14 @@ function List(props) {
     const temp = {...item};
     temp.text = e.target.value;
     setItem(temp);
-  }
+  }  
   return(
     <div className='list'>
-      <div className='left'><p className='chk-box'>&nbsp;</p></div>
+      <div className='left'>
+        <span className='chk-box'>
+          <img src={checkIcon}/>
+        </span>
+      </div>
       <div className='middle'><input className='insert' value={item.text} onChange={valueChange}/></div>
       <div className='right'>
         <p onClick={function(){console.log(item)}}>수정</p>
