@@ -41,12 +41,16 @@ function List(props) {
   function valueChange(e) {
     const temp = {...item};
     temp.text = e.target.value;
-    setItem(temp);
+    setItem(temp);    
   }  
+
+  function checkToggle() {    
+    setItem({...item, isComplete:!item.isComplete});    
+  }
   return(
     <div className='list'>
       <div className='left'>
-        <span className='chk-box'>
+        <span className={item.isComplete ? "chk-box on" : "chk-box"} onClick={checkToggle}>
           <img src={checkIcon}/>
         </span>
       </div>
