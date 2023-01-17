@@ -21,11 +21,11 @@ function App() {
       text : "4"
     },
   ]
-  const [ list, setList ] = useState(tempData);
+  const [ list, setList ] = useState([]);
   function addList(){
     const temp = {
       isComplete : false,
-      text : "Content"
+      text : ""
     }
     setList([...list, temp]);
   }
@@ -42,6 +42,13 @@ function App() {
     tlist[index] = otemp;
     setList(tlist);
   }
+
+  function valueChange(e, index) {    
+    const tlist = [...list];
+    const otemp = { ...tlist[index], text : e.target.value };    
+    tlist[index] = otemp;
+    setList(tlist);
+  }
   return (
     <div className='content'>
       <div className='title'>
@@ -54,7 +61,7 @@ function App() {
           <div className='right'><p>option</p></div>
         </div>
         { list && list.map((obj, index)=>{
-          return <List key={index} list={obj} remove={removeItem} index={index} checkToggle={checkToggle} />
+          return <List key={index} list={obj} remove={removeItem} index={index} checkToggle={checkToggle} valueChange={valueChange} />
         }) }      
         <div className='list'>
           <p onClick={addList}> 항목 추가하기 </p>
@@ -65,14 +72,6 @@ function App() {
 }
 
 function List(props) {  
-  const [ item, setItem ] = useState(props.list);
-  function valueChange(e) {
-    const temp = {...item};
-    temp.text = e.target.value;
-    setItem(temp);    
-  }  
-
-  
   return(
     <div className='list'>
       <div className='left'>
@@ -80,7 +79,7 @@ function List(props) {
           <img src={checkIcon}/>
         </span>
       </div>
-      <div className='middle'><input className='insert' value={props.list.text} onChange={valueChange}/></div>
+      <div className='middle'><input className='insert' placeholder='Content' value={props.list.text} onChange={(e)=>{props.valueChange(e, props.index)}}/></div>
       <div className='right'>
         {/* <p onClick={function(){console.log(item)}}>수정</p> */}
         <p onClick={()=>{props.remove(props.index)}}>삭제</p>
