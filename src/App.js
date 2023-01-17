@@ -6,14 +6,35 @@ function App() {
   const tempData = [
     {
       isComplete : false,
-      text : "내용이다."
+      text : "1"
     },
     {
       isComplete : false,
-      text : "내용이다."
+      text : "2"
+    },
+    {
+      isComplete : false,
+      text : "3"
+    },
+    {
+      isComplete : false,
+      text : "4"
     },
   ]
   const [ list, setList ] = useState(tempData);
+  function addList(){
+    const temp = {
+      isComplete : false,
+      text : "Content"
+    }
+    setList([...list, temp]);
+  }
+  function removeItem(index) {    
+    const temp = [...list];
+    temp.splice(index,1);
+    console.log(temp);
+    setList(temp);    
+  }
   return (
     <div className='content'>
       <div className='title'>
@@ -26,10 +47,10 @@ function App() {
           <div className='right'><p>option</p></div>
         </div>
         { list && list.map((obj, index)=>{
-          return <List key={index} list={obj} />
+          return <List key={index} list={obj} remove={removeItem} index={index} />
         }) }      
         <div className='list'>
-          <p> 항목 추가하기 </p>
+          <p onClick={addList}> 항목 추가하기 </p>
         </div>
       </div>
     </div>
@@ -56,8 +77,8 @@ function List(props) {
       </div>
       <div className='middle'><input className='insert' value={item.text} onChange={valueChange}/></div>
       <div className='right'>
-        <p onClick={function(){console.log(item)}}>수정</p>
-        <p>삭제</p>
+        {/* <p onClick={function(){console.log(item)}}>수정</p> */}
+        <p onClick={()=>{props.remove(props.index)}}>삭제</p>
       </div>
     </div>
   );
