@@ -35,6 +35,13 @@ function App() {
     console.log(temp);
     setList(temp);    
   }
+
+  function checkToggle(index) {    
+    const tlist = [...list];
+    const otemp = { ...tlist[index], isComplete : !tlist[index].isComplete };
+    tlist[index] = otemp;
+    setList(tlist);
+  }
   return (
     <div className='content'>
       <div className='title'>
@@ -47,7 +54,7 @@ function App() {
           <div className='right'><p>option</p></div>
         </div>
         { list && list.map((obj, index)=>{
-          return <List key={index} list={obj} remove={removeItem} index={index} />
+          return <List key={index} list={obj} remove={removeItem} index={index} checkToggle={checkToggle} />
         }) }      
         <div className='list'>
           <p onClick={addList}> 항목 추가하기 </p>
@@ -65,17 +72,15 @@ function List(props) {
     setItem(temp);    
   }  
 
-  function checkToggle() {    
-    setItem({...item, isComplete:!item.isComplete});    
-  }
+  
   return(
     <div className='list'>
       <div className='left'>
-        <span className={item.isComplete ? "chk-box on" : "chk-box"} onClick={checkToggle}>
+        <span className={props.list.isComplete ? "chk-box on" : "chk-box"} onClick={()=>{props.checkToggle(props.index)}}>
           <img src={checkIcon}/>
         </span>
       </div>
-      <div className='middle'><input className='insert' value={item.text} onChange={valueChange}/></div>
+      <div className='middle'><input className='insert' value={props.list.text} onChange={valueChange}/></div>
       <div className='right'>
         {/* <p onClick={function(){console.log(item)}}>수정</p> */}
         <p onClick={()=>{props.remove(props.index)}}>삭제</p>
